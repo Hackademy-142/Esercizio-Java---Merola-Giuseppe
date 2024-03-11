@@ -12,9 +12,25 @@
 
 // console.log(`La somma tra i numeri equivale a ${somma} e la media risulta ${media}`);
 
+// // Variabile con funzione
+
+// let arr = [2,4,5,10,3];
+
+// function somma(arr) {
+
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum = sum + arr[i] 
+//     }
+//     return sum
+
+// }
+
+// console.log(somma(arr));
 
 
-// Esercizio 2
+
+// // Esercizio 2
 // let annoCorrente = 2024;
 // let annoNascita = 1991;
 
@@ -22,6 +38,26 @@
 // let anniMancanti = 100 - annoPersona;
 
 // console.log(`Hai ${annoPersona} anni e ti mancano ${anniMancanti} anni per compierne 100`);
+
+
+// // Variabile con funzione 
+
+// function eta(ac,an) {
+//     let ap = ac - an
+//     return ap
+// }
+
+// let anniPersona = eta(2024,1991)
+// let cento = 100;
+
+// function anniMancanti() {
+//     let anniManc = cento - anniPersona
+//     return anniManc
+// }
+
+// let anniacento = anniMancanti()
+
+// console.log(`Hai ${anniPersona} e ti mancano ${anniacento} per arrivare a 100 anni`);
 
 
 
@@ -36,8 +72,25 @@
 // console.log(`Ci sono ${fileRisultanti} file di gatti e ne mancano ${gattiMancanti} per una nuova fila, con un avanzo di ${resto}`);
 
 
+// // Variabile con funzione
 
-// Esercizio Extra
+// function gatti(numGatti, gattiperFila) {
+//     let file = Math.round (numGatti/gattiperFila)
+//     let resto = numGatti % gattiperFila
+//     let gattiMancanti = gattiperFila - resto
+
+//     let datGatti = [file,resto,gattiMancanti]
+//     return datGatti
+// }
+
+// let datGatti = gatti(44,6)
+
+// console.log(`Ci sono ${datGatti[0]} file di gatti e ne mancano ${datGatti[1]} per una nuova fila, con un avanzo di ${datGatti[2]}`);
+
+
+
+// //Esercizio Extra
+
 // let a = 10;
 // let b = -2;
 // let c = 31;
@@ -50,6 +103,29 @@
 // let temperaturaMinima = Math.min (a,b,c,d,e,f,g);
 
 // console.log(`La temperatura più calda è ${temperaturaAlta} quella più fredda ${temperaturaMinima}`);
+
+
+// // Variabile con funzione
+
+// let temp = [10, -2, 31, 22, 15, -6, 7];
+
+// function maggiore(temp) {
+//     let numMaggiore = Math.max(...temp)
+//     return numMaggiore
+// }
+
+// let tempAlta = maggiore(temp)
+
+// function minore(temp) {
+//     let numMinore = Math.min(...temp)
+//     return numMinore 
+// }
+
+// let tempMin = minore(temp)
+
+// console.log(`La temperatura più alta è ${tempAlta} e quella più fredda è di ${tempMin}`);
+
+
 
 
 // Giorno 2 -----------------------------------------------
@@ -147,3 +223,113 @@
 // console.log("Totale Giocatore 1: " + punteggioGiocatore1);
 // console.log("Totale Giocatore 2: " + punteggioGiocatore2);
 
+
+// Giorno 3 ------------------------------------------------
+
+
+// Esercizio 1
+
+
+// function generaNumeriCasuali(n) {
+//     let numeriCasuali = [];
+  
+//     for (var i = 0; i < n; i++) {
+//       let numeroCasuale = Math.floor(Math.random() * (10 - 1) + 1);
+//       numeriCasuali.push(numeroCasuale);
+//     }
+  
+//     return numeriCasuali;
+//   }
+  
+//   let risultato = generaNumeriCasuali(5);
+//   console.log(risultato);
+
+
+// Esercizio 2
+
+// let arrNumeri = [3,7,-2,5,8,1,2,5,6,-4]
+
+
+// Ordine decrescente
+// arrNumeri.sort(function(a, b) {
+//     return b - a;
+//     }
+//   )
+
+// console.log(arrNumeri)
+
+// Ordine crescente
+// arrNumeri.sort(function(a, b) {
+//     return a - b;
+//     }
+//   )
+
+// console.log(arrNumeri)
+
+
+// Esercizio 3
+
+// function contaCifre(numero) {
+    
+//     if (Number.isInteger(numero) && numero >= 0 && numero <= 9999) {
+      
+//       let numeroStringa = numero.toString();
+      
+//       return numeroStringa.length;
+//     } else {
+      
+//       return "Il numero deve essere un intero positivo non superiore a 9999.";
+//     }
+//   }
+
+// console.log(contaCifre(9));
+// console.log(contaCifre(99));
+
+
+// Esercizio 4
+
+// function uguale(n,m) {
+//     return (n === m)
+// }
+
+// let risultato = uguale(2,2)
+
+// console.log(risultato);
+
+
+// Esercizio 5
+
+// function tabellina(num) {
+
+//     let arr = []
+
+//     for (let i = 1; i <= 10; i++) {
+//         let moltiplicazione = num * i
+//         arr.push(moltiplicazione)
+//     }
+//     return arr
+// }
+
+// let risultato = tabellina(2);
+
+// console.log(risultato);
+
+
+// Esercizio 6
+
+// Spread Syntax (...)
+// let arr = [10,12,78,-4,-20,11];
+
+// function maggiore(arr) {
+//     let numMaggiore = Math.max(...arr)
+//     return numMaggiore
+// }
+
+// console.log(maggiore(arr));
+
+// function minore(arr) {
+//     let numMinore = Math.min(...arr)
+//     return numMinore 
+// }
+
+// console.log(minore(arr));
