@@ -178,7 +178,7 @@
 // do {
 
 //     bevanda = +prompt("Scegli la tua bevanda");
-   
+
 // } while (bevanda != 1 && bevanda != 2 && bevanda != 3);
 
 // switch (bevanda) {
@@ -232,15 +232,15 @@
 
 // function generaNumeriCasuali(n) {
 //     let numeriCasuali = [];
-  
+
 //     for (var i = 0; i < n; i++) {
 //       let numeroCasuale = Math.floor(Math.random() * (10 - 1) + 1);
 //       numeriCasuali.push(numeroCasuale);
 //     }
-  
+
 //     return numeriCasuali;
 //   }
-  
+
 //   let risultato = generaNumeriCasuali(5);
 //   console.log(risultato);
 
@@ -270,14 +270,14 @@
 // Esercizio 3
 
 // function contaCifre(numero) {
-    
+
 //     if (Number.isInteger(numero) && numero >= 0 && numero <= 9999) {
-      
+
 //       let numeroStringa = numero.toString();
-      
+
 //       return numeroStringa.length;
 //     } else {
-      
+
 //       return "Il numero deve essere un intero positivo non superiore a 9999.";
 //     }
 //   }
@@ -333,3 +333,149 @@
 // }
 
 // console.log(minore(arr));
+
+
+// Giorno 4 -------------------------------------------------
+
+// Esercizio 1
+
+// let array = [66,101];
+// let valore = 66;
+
+// function verificaValore(array,valore) {
+//     return array.includes(valore)
+// }
+
+// console.log(verificaValore(array,valore));
+
+// ------------------------
+
+// let array = [66,101];
+
+// console.log(array.includes(66));
+
+
+// Esercizio 2
+
+// let array = [1, 5, 7, 12];
+
+// function somma (array) {
+//     let somma = array.reduce( (acc, num)=> acc + num, 0 )
+//     return somma
+// }
+
+// console.log(somma(array));
+
+
+// Esercizio 3
+
+// let array = [3, 5, 10, 2, 8];
+
+// let somma = array.reduce((acc,num) => acc + num, 0);
+// let media = somma / array.length;
+// let minori = array.filter((el) => el < media);
+
+// console.log(`${media}, valori minori = ${minori}`)
+
+//-----------------
+
+// let array = [3, 5, 10, 2, 8];
+
+// function arr(array) {
+//     let somma = array.reduce((acc,num) => acc + num, 0);
+//     let media = somma / array.length;
+//     let minori = array.filter((el) => el < media);
+
+//     console.log(`${media}, valori minori = ${minori}`)
+// }
+
+// arr(array);
+
+
+// Esercizio 4
+
+// let x = [1, 2, 3, 4, 5, 6];
+// let y = 2;
+
+// function findMultiples(array,divisore) {
+//     return array.filter((el) => el % divisore === 0)
+// }
+
+// console.log(findMultiples(x,y));
+
+
+// Esercizio 5
+
+// function generaArr() {
+//     let array = [];
+//     for (let i = 0; i < 10; i++) {
+//         array.push(Math.floor(Math.random() * 10) + 1);
+//     }
+//     return array;
+// }
+
+// function operazioni(array1, array2, operazione) {
+//     let risultati = []
+    
+//     for (let i = 0; i < 10; i++) {
+//         switch (operazione) {
+//             case "add": 
+//             risultati.push(array1[i] + array2[i])
+//             break;
+            
+//             case "sott":
+//             risultati.push(array1[i] - array2[i])
+//             break;
+    
+//             case "molt":
+//             risultati.push(array1[i] * array2[i])
+//             break;
+            
+//             case "div":
+//             risultati.push(array1[i] / array2[i])
+//             break;         
+//         } 
+//     }
+
+//     return risultati;
+// }
+
+// let array1 = generaArr();
+// let array2 = generaArr();
+
+// let risultatiFinali = operazioni(array1, array2, "add");
+
+// console.log("Array 1:" , array1);
+// console.log("Array 2:" , array2);
+// console.log("Risultati", risultatiFinali);
+
+
+// Esercizio 6
+
+// let mixArray = [1, true, "hackademy", 100, "Javascript", false, null, "php"];
+
+// function filtro(array) {
+//     let filtered = array.filter((el) => typeof el === "string");
+//     return filtered;
+// }
+
+// console.log(filtro(mixArray));
+
+
+// Esercizio Extra
+
+// function palindroma(frase) {
+    
+//     let frasePulita = frase.replace(/\W/g,"").toLowerCase();
+
+//     let fraseContraria = frasePulita.split('').reverse().join('');
+
+//     return frasePulita === fraseContraria;
+    
+// }
+
+// let input = "i topi non avevano nipoti";
+// let risultato = palindroma(input);
+
+// console.log(risultato);
+
