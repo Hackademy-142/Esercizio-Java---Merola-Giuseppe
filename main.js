@@ -128,7 +128,7 @@
 
 
 
-// Giorno 2 -----------------------------------------------
+// Giorno 2 ------------------------------------------------
 
 
 // Esercizio 1
@@ -478,4 +478,139 @@
 // let risultato = palindroma(input);
 
 // console.log(risultato);
+
+
+// Giorno 5 -------------------------------------------------
+
+// Simulazione Bowling
+
+// const bowling = {
+//     "players" : [
+//         {"name": "Giuseppe" , "scores": []},
+//         {"name": "Flavia" , "scores": []},
+//         {"name": "Giovanni" , "scores": []},
+//         {"name": "Damiano" , "scores": []},
+//     ],
+//     "setNewPlayer": function(nome){
+//         this.players.push(  {"name": nome, "scores": []} )
+//     },
+//     "setScores": function(){
+//         this.players.forEach( (giocatore)=>{
+//             for (let i = 0; i < 10; i++) {
+//                 giocatore.scores.push( Math.round( Math.random()*(10-0)+0))
+//             }
+//         })
+//     },
+//     "setFinalScore": function(){
+//         this.players.forEach( (giocatore)=> {
+//             giocatore.finalScore = giocatore.scores.reduce( (acc,num)=>acc+ num, 0 )
+//         })
+//     },
+//     "setWinner": function(){
+//         this.players.sort( (a, b)=> b.finalScore - a.finalScore )
+//         console.log(`Ìl vincitore è ${this.players[0].name} con ${this.players[0].finalScore} punti`);
+//     },
+//     "printClassifica": function() {
+//         console.log(`Classifica: `);
+//         for (let i = 0; i < this.players.length; i++) {
+//             console.log(`${this.players[i].name} con ${this.players[i].finalScore} punti`);
+//         }
+//     }
+// }
+
+// bowling.setNewPlayer()
+
+// bowling.setScores()
+// bowling.setFinalScore()
+// bowling.setWinner()
+// bowling.printClassifica()
+
+
+// Simulazione Garage
+
+// const Garage = {
+//     "Automobili": [
+//         {"marca": "Fiat", "modelli": ["Panda","Tipo","500X"]},
+//         {"marca": "Audi", "modelli": ["A3","A4","A6"]},
+//         {"marca": "Mercedes", "modelli": ["Classe-A","Classe-B","Classe-C"]},
+//         {"marca": "BMW", "modelli": ["X1","X3","X5"]},
+//         {"marca": "Skoda", "modelli": ["Fabia","Octavia","Kodiaq"]},
+//     ],
+//     "stampaModelli": function() {
+//         let marcaScelta = prompt("Scegli la marca desiderata: \r Fiat \r Audi \r Mercedes \r BMW \r Skoda")
+
+//         let marcaTrovata = false;
+
+//         this.Automobili.forEach((auto)=> {
+//             if (marcaScelta.toLowerCase() === auto.marca.toLowerCase()) {
+//                 console.log(auto.modelli);
+//                 marcaTrovata = true;
+//             } 
+//         })
+//         if (!marcaTrovata) {
+//             console.log("Selezione non valida");
+//         }
+//     } 
+// }
+
+// Garage.stampaModelli()
+
+
+function GiocoBowling() {
+    this.numeroGiocatori = 0;
+    this.giocatori = [];
+  
+    this.iniziaGioco = function() {
+      this.numeroGiocatori = parseInt(prompt("Inserisci il numero di giocatori:"));
+  
+      for (let i = 0; i < this.numeroGiocatori; i++) {
+        let nomeGiocatore = prompt(`Inserisci il nome del giocatore ${i + 1}:`);
+        this.giocatori.push({ nome: nomeGiocatore, punteggi: [] });
+      }
+  
+      this.gioca();
+    };
+  
+    this.lanciaPallina = function() {
+      return Math.floor(Math.random() * 11); // Genera un numero casuale tra 0 e 10
+    };
+  
+    this.gioca = function() {
+      for (let turno = 0; turno < 10; turno++) {
+        for (let i = 0; i < this.numeroGiocatori; i++) {
+          let punteggio = this.lanciaPallina();
+          this.giocatori[i].punteggi.push(punteggio);
+          console.log(`${this.giocatori[i].nome} - Turno ${turno + 1}, Lancio ${this.giocatori[i].punteggi.length}: ${punteggio}`);
+        }
+      }
+  
+      this.calcolaPunteggiTotali();
+      this.mostraClassifica();
+    };
+  
+    this.calcolaPunteggiTotali = function() {
+      for (let i = 0; i < this.numeroGiocatori; i++) {
+        let punteggiTotali = 0;
+        for (let turno = 0; turno < 10; turno++) {
+          punteggiTotali += this.giocatori[i].punteggi[turno];
+        }
+        this.giocatori[i].punteggioTotale = punteggiTotali;
+      }
+    };
+  
+    this.mostraClassifica = function() {
+      console.log("\nClassifica Finale:");
+      this.giocatori.sort((a, b) => b.punteggioTotale - a.punteggioTotale);
+  
+      this.giocatori.forEach((giocatore, indice) => {
+        console.log(`${indice + 1}. ${giocatore.nome} - Punteggio Totale: ${giocatore.punteggioTotale}`);
+      });
+    };
+  }
+  
+  // Esempio di utilizzo
+  const giocoBowling = new GiocoBowling();
+  giocoBowling.iniziaGioco();
+  
+
 
