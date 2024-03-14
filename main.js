@@ -416,21 +416,21 @@
 
 // function operazioni(array1, array2, operazione) {
 //     let risultati = []
-    
+
 //     for (let i = 0; i < 10; i++) {
 //         switch (operazione) {
 //             case "add": 
 //             risultati.push(array1[i] + array2[i])
 //             break;
-            
+
 //             case "sott":
 //             risultati.push(array1[i] - array2[i])
 //             break;
-    
+
 //             case "molt":
 //             risultati.push(array1[i] * array2[i])
 //             break;
-            
+
 //             case "div":
 //             risultati.push(array1[i] / array2[i])
 //             break;         
@@ -465,13 +465,13 @@
 // Esercizio Extra
 
 // function palindroma(frase) {
-    
+
 //     let frasePulita = frase.replace(/\W/g,"").toLowerCase();
 
 //     let fraseContraria = frasePulita.split('').reverse().join('');
 
 //     return frasePulita === fraseContraria;
-    
+
 // }
 
 // let input = "i topi non avevano nipoti";
@@ -556,61 +556,82 @@
 // Garage.stampaModelli()
 
 
-function GiocoBowling() {
-    this.numeroGiocatori = 0;
-    this.giocatori = [];
-  
-    this.iniziaGioco = function() {
-      this.numeroGiocatori = parseInt(prompt("Inserisci il numero di giocatori:"));
-  
-      for (let i = 0; i < this.numeroGiocatori; i++) {
-        let nomeGiocatore = prompt(`Inserisci il nome del giocatore ${i + 1}:`);
-        this.giocatori.push({ nome: nomeGiocatore, punteggi: [] });
-      }
-  
-      this.gioca();
-    };
-  
-    this.lanciaPallina = function() {
-      return Math.floor(Math.random() * 11); // Genera un numero casuale tra 0 e 10
-    };
-  
-    this.gioca = function() {
-      for (let turno = 0; turno < 10; turno++) {
-        for (let i = 0; i < this.numeroGiocatori; i++) {
-          let punteggio = this.lanciaPallina();
-          this.giocatori[i].punteggi.push(punteggio);
-          console.log(`${this.giocatori[i].nome} - Turno ${turno + 1}, Lancio ${this.giocatori[i].punteggi.length}: ${punteggio}`);
-        }
-      }
-  
-      this.calcolaPunteggiTotali();
-      this.mostraClassifica();
-    };
-  
-    this.calcolaPunteggiTotali = function() {
-      for (let i = 0; i < this.numeroGiocatori; i++) {
-        let punteggiTotali = 0;
-        for (let turno = 0; turno < 10; turno++) {
-          punteggiTotali += this.giocatori[i].punteggi[turno];
-        }
-        this.giocatori[i].punteggioTotale = punteggiTotali;
-      }
-    };
-  
-    this.mostraClassifica = function() {
-      console.log("\nClassifica Finale:");
-      this.giocatori.sort((a, b) => b.punteggioTotale - a.punteggioTotale);
-  
-      this.giocatori.forEach((giocatore, indice) => {
-        console.log(`${indice + 1}. ${giocatore.nome} - Punteggio Totale: ${giocatore.punteggioTotale}`);
-      });
-    };
-  }
-  
-  // Esempio di utilizzo
-  const giocoBowling = new GiocoBowling();
-  giocoBowling.iniziaGioco();
-  
+// Giorno 6 ------------------------------------------------
+
+// Esercizio 1
+
+// let list = [
+//     { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+//     { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
+//     { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
+//    ];
+
+
+// // CON .map
+// // let mapped = list.map((oggetto)=> {
+// //     oggetto.frase = (`Awee regà, mi chiamo ${oggetto.firstName} e lavoro con ${oggetto.language} , ma effettivamente è meglio javascript`);
+// //     return oggetto
+// // })
+
+
+// // CON .forEach
+// function listMod(array) {
+//     array.forEach((oggetto)=>{
+//         oggetto.frase = (`Awee regà, mi chiamo ${oggetto.firstName} e lavoro con ${oggetto.language} , ma effettivamente è meglio javascript`);
+//     })
+// }
+
+// listMod(list);
+// console.log(list);
+
+
+// Esercizio 2
+
+// let list = [
+//     { firstName: 'Emma', lastName: 'Z.', country: 'Netherlands', continent: 'Europe', age: 29, eyes: 'Brown' },
+//     { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, eyes: 'Black' },
+//     { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 42, eyes: 'Green' }
+//    ];
+
+// function filtroOcchi(array) {
+//     array = list.filter((oggetto)=> oggetto.eyes == "Green")
+//     if (array.length == 0) {
+//         console.log("false");
+//     } else {
+//         console.log("true");
+//     }
+// }
+
+// filtroOcchi(list)
+
+
+// Esercizio 3
+
+// let list = [
+//     { firstName: 'Emma', lastName: 'Z.', country: 'Netherlands', continent: 'Europe', age: 29, logged: true },
+//     { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, logged: false },
+//     { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 42, logged: true }
+// ];
+
+// function login(array) {
+//     array = list.forEach((oggetto)=> {
+//         if (oggetto.logged === true) {
+//             alert("L'utente è stato registrato")
+//         } else {
+//             alert("L'utente non è registrato")
+//         }
+//     })  
+// }
+
+// login(list)
+
+
+
+
+
+
+
+
+
 
 
