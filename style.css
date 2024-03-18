@@ -1,0 +1,6 @@
+.bottone_custom {
+    background: linear-gradient(#A7FFF6, #A4F9C8, #8AA39B);
+    border: none;
+    color: black;
+    box-shadow: 5px 5px 10px black;
+}

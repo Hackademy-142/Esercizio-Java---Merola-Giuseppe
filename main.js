@@ -1,4 +1,4 @@
-// Giorno 1 ------------------------------------------------
+// GIORNO 1 ------------------------------------------------
 
 // // Esercizio 1
 // let numero1 = 2;
@@ -128,7 +128,7 @@
 
 
 
-// Giorno 2 ------------------------------------------------
+// GIORNO 2 ------------------------------------------------
 
 
 // Esercizio 1
@@ -224,8 +224,9 @@
 // console.log("Totale Giocatore 2: " + punteggioGiocatore2);
 
 
-// Giorno 3 ------------------------------------------------
 
+
+// GIORNO 3 ------------------------------------------------
 
 // Esercizio 1
 
@@ -335,7 +336,10 @@
 // console.log(minore(arr));
 
 
-// Giorno 4 -------------------------------------------------
+
+
+
+// GIORNO 4 -------------------------------------------------
 
 // Esercizio 1
 
@@ -480,7 +484,7 @@
 // console.log(risultato);
 
 
-// Giorno 5 -------------------------------------------------
+// GIORNO 5 -------------------------------------------------
 
 // Simulazione Bowling
 
@@ -556,7 +560,7 @@
 // Garage.stampaModelli()
 
 
-// Giorno 6 ------------------------------------------------
+// GIORNO 6 ------------------------------------------------
 
 // Esercizio 1
 
@@ -596,9 +600,9 @@
 // function filtroOcchi(array) {
 //     array = list.filter((oggetto)=> oggetto.eyes == "Green")
 //     if (array.length == 0) {
-//         console.log("false");
+//         return false;
 //     } else {
-//         console.log("true");
+//         return;
 //     }
 // }
 
@@ -627,6 +631,66 @@
 
 
 
+
+// GIORNO 7
+
+// Esercizio 1
+
+// let paragrafi = document.querySelectorAll("p");
+// let bottoneNascondi = document.querySelector("#nascondi");
+// let bottoneColore = document.querySelector("#colore");
+// let bottoneBold = document.querySelector("#bold")
+
+// bottoneNascondi.addEventListener("click" , ()=>{
+//     paragrafi.forEach((el)=>{
+//         el.classList.toggle("d-none");
+//     });
+// });
+
+// bottoneColore.addEventListener("click" , ()=>{
+//     paragrafi.forEach((el)=>{
+//         el.style.color = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+//     });
+// });
+
+// bottoneBold.addEventListener("click" , ()=>{
+//     paragrafi.forEach((el)=>{
+//         el.style = "black";
+//         el.classList.toggle("fw-bold");
+//     });
+// });
+
+
+// Esercizio 2
+
+// const racchette = [
+//     {marca: "Head", img: "./head.jpeg", specifiche: "Racchetta Sinner"},
+//     {marca: "Wilson", img: "./wilson.jpeg", specifiche: "Racchetta Federer"},
+//     {marca: "Babolat", img: "./babolat.jpeg", specifiche: "Racchetta Nadal"},
+//     {marca: "Yonex", img: "./yonex.jpeg", specifiche: "Racchetta Wawrinka"},
+// ];
+
+// let contenitoreCard = document.querySelector("#cardWrapper");
+
+// function creaCard(){
+    
+//     racchette.forEach((el)=> {
+//         let col = document.createElement("div");
+//         col.classList.add("col-3" , "my-3");
+//         col.innerHTML = `<div class="card" style="width: 18rem;">
+//         <img src="${el.img}" class="card-img-top" alt="...">
+//         <div class="card-body">
+//         <h5 class="card-title text-center">${el.marca}</h5>
+//         <p class="card-text text-center">${el.specifiche}</p>
+//         <a href="#" class="bottone_custom btn btn-primary d-block mx-auto">Go somewhere</a>
+//         </div>
+//         </div>`
+        
+//         contenitoreCard.appendChild(col);
+//     })  
+// }
+
+// creaCard()
 
 
 
